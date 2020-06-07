@@ -1,3 +1,11 @@
+// This code creates an express app that handles a post request when 
+// message is sent to my Twilio number. Twilio can't access the local host
+// so ngrok is needed to allow access to port 1337 over http.
+// Install ngrok and type ngrok http 1337. ngrok will create a public addressabel
+// url that Twilio can use for the post request
+// In Twilio's console, under the messaging section of the Twilio number under "a message comes in",
+// paste the ngrok url followed by /sms (post route of the express app) and save.
+
 const http = require('http');
 const express = require('express');
 const MessagingResponse = require('twilio').twiml.MessagingResponse;
